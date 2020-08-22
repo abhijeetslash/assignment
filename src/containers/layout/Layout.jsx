@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import LaunchCards from '../../components/launchCards/launchCards';
+import Filters from '../../components/filters/Filters';
 
 class Layout extends React.Component {
     constructor(props){
@@ -36,7 +37,12 @@ class Layout extends React.Component {
             return <div>Fetching...</div>
         }
 
-        return <LaunchCards launches={launches} />    
+        return (
+            <div>
+                <Filters launches={launches}/>
+                <LaunchCards launches={launches} />
+            </div>
+        )    
     }
 }
 
